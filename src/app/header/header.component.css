@@ -1,0 +1,22 @@
+.header-background {
+    background-color: #98dac6;
+    border-color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+a {
+    font-weight: bold;
+}
+.navbar-toggle {
+    float: left;
+    border: transparent;
+}
+.header-text {
+    font-size: x-large;
+    position: absolute;
+    margin-top: 2%;
+    color: white;
+    text-align: center;
+}
