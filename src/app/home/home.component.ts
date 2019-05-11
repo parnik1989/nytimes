@@ -7,10 +7,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  // baseUrl = 'https://api.nytimes.com/svc/mostpopular/v2/mostviewed/viewed/7.json?apikey=FN93uCa8WQZETF59' ;
   apiKey = 'LHJ27PV8SL2CfkGYsRkvFDANDSXePTk4';
   baseUrl = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/';
-  resultList: NewsData[];
+  resultList: NewsData[];  defaultTime: '7';
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
@@ -20,13 +19,10 @@ export class HomeComponent implements OnInit {
   get_products(days: String): Array<NewsData> {
     this.resultList = new Array<NewsData>();
     this.httpClient.get(this.baseUrl + days + '.json?api-key=' + this.apiKey ).subscribe((res: Response) => {
-        console.log(res);
         this.resultList = res.results;
-        console.log(this.resultList);
     });
     return this.resultList;
 }
-
 }
 
 export class Response {
