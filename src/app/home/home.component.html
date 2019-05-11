@@ -1,11 +1,10 @@
-<div id="newsList" *ngFor ="let news of resultList">
-  <div class="news-article">
-    <div  id="heading">
-        <a class="btn btn-link" data-toggle="collapse" href="#{{news.asset_id}}"
-         aria-expanded="true" aria-controls="collapseOne">{{news.title}} </a>
-    </div>
-    <div id="{{news.asset_id}}" class="collapse" aria-labelledby="heading" data-parent="#newsList">
-      <div>{{news.abstract}} </div>
-    </div>
+<div class="news-article" id="newsList" *ngFor="let news of resultList">
+  <div id="heading" class="heading">
+    <a data-toggle="collapse" href="#{{news.asset_id}}">
+      <p>{{news.title}}</p>
+    </a>
+  </div>
+  <div id="{{news.asset_id}}" class="collapse news-desc" aria-labelledby="heading" data-parent="#newsList">
+    <p>{{news.abstract}}</p>
   </div>
 </div>
